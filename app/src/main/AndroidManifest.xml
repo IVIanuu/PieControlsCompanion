@@ -1,11 +1,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.ivianuu.piecontrolscompanion">
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/Transparent">
+        android:theme="@style/Transparent"
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning">
 
         <activity
             android:name=".MainActivity"
@@ -19,7 +21,8 @@
         <receiver
             android:name=".PerformGlobalActionReceiver"
             android:enabled="true"
-            android:exported="true">
+            android:exported="true"
+            tools:ignore="ExportedReceiver">
             <intent-filter>
                 <action android:name="com.ivianuu.piecontrolscompanion.PERFORM_GLOBAL_ACTION" />
             </intent-filter>

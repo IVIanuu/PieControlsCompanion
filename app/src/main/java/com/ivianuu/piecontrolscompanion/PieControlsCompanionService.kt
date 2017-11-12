@@ -14,9 +14,7 @@ class PieControlsCompanionService : AccessibilityService() {
     private val receiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
             val action = intent.getIntExtra(EXTRA_GLOBAL_ACTION, -1)
-            if (action != -1) {
-                performGlobalAction(action)
-            }
+            performGlobalAction(action)
         }
     }
 
