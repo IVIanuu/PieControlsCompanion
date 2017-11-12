@@ -16,6 +16,15 @@
             </intent-filter>
         </activity>
 
+        <receiver
+            android:name=".PerformGlobalActionReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.ivianuu.piecontrolscompanion.PERFORM_GLOBAL_ACTION" />
+            </intent-filter>
+        </receiver>
+
         <service
             android:name=".PieControlsCompanionService"
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
@@ -27,7 +36,6 @@
                 android:name="android.accessibilityservice"
                 android:resource="@xml/accessibility_service_config" />
         </service>
-
 
     </application>
 </manifest>
