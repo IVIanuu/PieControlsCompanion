@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Pie Controls Companion</string>
+    <string name="accessibility_service_desc">Just to make Pie Controls work.</string>
+
+    <!-- Dialog -->
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="dialog_enable_accessibility_title">Accessibility Required</string>
+    <string name="dialog_enable_accessibility_summary">In order to click the buttons for Pie. You need to grant the Accessibility Service permission.</string>
+
+    <!-- Error -->
+    <string name="error_activity_not_found">Can\'t open screen</string>
+
+    <!-- Message -->
+    <string name="msg_accessibility_granted">Accessibility is now enabled! No further configuration required.</string>
+    <string name="msg_accessibility_already_enabled">Accessibility already enabled! No setup required.</string>
+</resources>
