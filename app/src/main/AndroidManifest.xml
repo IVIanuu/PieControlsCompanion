@@ -18,6 +18,10 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".WakeUpActivity"
+            android:exported="true"/>
+
         <receiver
             android:name=".PerformGlobalActionReceiver"
             android:enabled="true"

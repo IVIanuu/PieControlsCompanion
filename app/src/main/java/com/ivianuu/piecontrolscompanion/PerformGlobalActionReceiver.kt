@@ -12,8 +12,6 @@ import android.widget.Toast
  */
 class PerformGlobalActionReceiver: BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
-        Log.d("Haha", "received")
-
         val intentAction = intent.action
         if (intentAction != null && intentAction == ACTION_PERFORM_GLOBAL_ACTION) {
             if (context.isCompanionEnabled()) {

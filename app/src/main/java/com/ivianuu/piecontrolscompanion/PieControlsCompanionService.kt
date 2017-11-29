@@ -3,6 +3,7 @@ package com.ivianuu.piecontrolscompanion
 import android.accessibilityservice.AccessibilityService
 import android.content.*
 import android.content.pm.PackageManager
+import android.util.Log
 import android.view.accessibility.AccessibilityEvent
 
 
@@ -20,26 +21,20 @@ class PieControlsCompanionService : AccessibilityService() {
 
     override fun onCreate() {
         super.onCreate()
-        setMainActivityEnabled(false)
         registerReceiver(receiver, IntentFilter(ACTION_PERFORM_GLOBAL_ACTION_INTERNAL))
+
+        Log.d("Service", "on create")
     }
 
     override fun onDestroy() {
         super.onDestroy()
         unregisterReceiver(receiver)
-        setMainActivityEnabled(true)
+        Log.d("Service", "on destroy")
     }
 
     override fun onAccessibilityEvent(event: AccessibilityEvent?) {
     }
 
     override fun onInterrupt() {
-    }
-
-    private fun setMainActivityEnabled(enabled: Boolean) {
-        val state = if (enabled) PackageManager.COMPONENT_ENABLED_STATE_ENABLED
-        else PackageManager.COMPONENT_ENABLED_STATE_DISABLED
-        packageManager.setComponentEnabledSetting(
-                ComponentName(this, MainActivity::class.java), state, PackageManager.DONT_KILL_APP)
     }
 }
